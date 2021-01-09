@@ -77,10 +77,7 @@
     mediaProcess: true, /** true,false: if true then process video and audio files */ 
     slideType: "revealjs",
     revealjsConfig: { /*TODO (https://revealjs.com) */
-	transition: 'zoom',
-	// backgroundTransition: 'zoom', 
-	// autoSlide: 5000,
-	// loop: true
+	transition: &quot;zoom&quot;
      }
   }); 
 &lt;/script&gt;
@@ -88,10 +85,10 @@
             </pre>
           </div>
           <p>Resolte:</p>
-          <button class="btn" onclick="showSlides()">Show</button>
-          <div id="slide-dialog-box" title="demo-2: slide mode" style="width: 1040px;height: 550px;overflow: scroll;">
+<!--           <button class="btn" onclick="showSlides()">Show</button> -->
+<!--           <div id="slide-dialog-box" title="demo-2: slide mode" style="width: 1040px;height: 550px;overflow: scroll;"> -->
             <div id="slide-resolte-contaniner"></div>
-          </div>
+<!--           </div> -->
           <script>
               $("#slide-resolte-contaniner").pptxToHtml({
                 pptxFileUrl: "Sample_demo1.pptx",
@@ -99,21 +96,18 @@
                 mediaProcess: true, /** true,false: if true then process video and audio files */
                 slideType: "revealjs",
                 revealjsConfig: { /*TODO (https://revealjs.com) */
-                    transition: 'zoom',
-                    // backgroundTransition: 'zoom', 
-                    // autoSlide: 5000,
-                    // loop: true
+                    transition: 'zoom'
                   }
               });
-              var dlog = $("#slide-dialog-box").dialog({
-                width: 1040,
-                height: 600,
-                autoOpen: false,
-                modal: true
-              });
-              function showSlides(){
-                dlog.dialog("open");
-              }
+//               var dlog = $("#slide-dialog-box").dialog({
+//                 width: 1040,
+//                 height: 600,
+//                 autoOpen: false,
+//                 modal: true
+//               });
+//               function showSlides(){
+//                 dlog.dialog("open");
+//               }
             </script>
     </div>
     </script>
