@@ -1,314 +1,305 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>PPTXjs | Docs </title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<style type="text/css">
-    /*the tables genereted by web-site: https://www.tablesgenerator.com/html_tables */
-    .tg  {border-collapse:collapse;border-spacing:0;}
-    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-    .tg .tg-jc4p{font-size:16px;background-color:#00009b;color:#ffffff;vertical-align:top}
-    .tg .tg-yw4l{vertical-align:top}
-    
-    
-    .p_heads_1{
-        font-size: 18px;
-        color: rgb(4, 0, 255)
-    }
-    .p_heads_2{
-        font-size: 16px;
-        color: rgb(63, 60, 253)
-    }
-    .p_heads_3{
-        font-size: 14px;
-        color: rgb(98, 95, 255)
-    }
- </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation · PPTXjs</title>
+  <meta name="description" content="PPTXjs v2 documentation: installation, viewer options, slideshow, editor, PresentationDocument API, PPTX/ODP export, Node.js, right-to-left, security and migration from v1.">
+  <link rel="canonical" href="https://pptx.js.org/pages/docs.html">
+  <meta name="theme-color" content="#c43e1c">
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body id="top">
-  <div class="wrapper row1">
-      <header id="header" class="hoc clear">
-        <div id="logo" class="fl_left">
-          <h1><a href="../index.html">PPTXjs</a></h1>
-        </div>
-        <nav id="mainav" class="fl_right">
-          <ul class="clear">
-            <li><a href="../index.html">Home</a></li>
-            <li class="active"><a href="docs.html">Docs</a></li>
-            <li><a href="demos.html">Demos</a></li>
-            <li><a href="https://github.com/meshesha">About</a></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <div class="content"> 
-      <h3>browsers: </h3>
-      <ul>
-        <li>IE > 10</li>
-        <li>Edge</li>
-        <li>FireFox</li>
-        <li>chrome</li>
-      </ul>
-      <hr>
-      <h3>Support:</h3>
-     <ul>
-        <li>Text</li>
-          <ul>
-            <li>Font size</li>
-            <li>Font family</li>
-            <li>Font style: blod, italic, underline, stok</li>
-            <li>Color</li>
-            <li>hyperlink</li>
-            <li>bullets (include numeric)</li>
-        </ul>
-      <li>Text block (convert to Div)</li>
-        <ul>
-            <li>Align (Horizontal and Vertical)</li>
-            <li>Background color (single color)</li>
-            <li>Border (borderColor, borderWidth, borderType, strokeDasharray)</li>
-        </ul>
-      <li>Shapes (support most of shapes)</li>
-        <ul>
-            <li>Background color (single color, gradient colors)</li>
-            <li>Background image</li>
-            <li>Rotations</li>
-            <li>Align</li>
-            <li>Border</li>
-        </ul>
-      <li>Custom shape</li>
-      <li>Media</li>
-        <ul>
-            <li>Picture (jpg/jpeg,png,gif,svg)</li>
-            <li>Video (html5 video player: mp4,ogg,WebM)</li>
-            <ul>
-                <li>IE:MP4.</li>
-                <li>Chrome:MP4,	WebM,Ogg.</li>
-                <li>Firefox:MP4,WebM,Ogg.</li>
-            </ul>
-            <li>Audio (html5 audio player:mp3,ogg,Wav)</li>
-            <ul>
-                <li>IE:mp3.</li>
-                <li>Chrome:mp3,Wav,Ogg.</li>
-                <li>Firefox:mp3,Wav,Ogg</li>
-            </ul>
-        </ul>
-      <li>Graph</li>
-        <ul>
-            <li>Bar chart</li>
-            <li>Line chart</li>
-            <li>Pie chart</li>
-            <li>Scatter chart</li>
-        </ul>
-      <li>SmartArt diagrams</li>
-      <li>Custom table</li>
-      <li>Theme table</li>
-      <li>Theme</li>
-        <ul>
-            <li>Background color</li>
-            <li>Background image</li>
-        </ul>
-      <li>Equations and formulas</li>
-        <ul>
-            <li>display Equations and formulas as image</li>
-        </ul>
-      <li>and more ...</li>
-    </ul>
-    <hr>
-    <h3>usage:</h3>
-      
-       <p>include necessary css files:</p>
-       <pre><code>
-          &lt;link rel="stylesheet" href="./css/pptxjs.css"&gt;
-          &lt;link rel="stylesheet" href="./css/nv.d3.min.css"&gt; &lt;!-- for charts graphs --&gt;
-        </code></pre>
-      <p>include necessary js files:</p>
-      <pre><code>
-          &lt;script type="text/javascript" src="./js/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
-          &lt;script type="text/javascript" src="./js/jszip.min.js"&gt;&lt;/script&gt; &lt;!-- v2.. , NOT v.3.. --&gt;
-          &lt;script type="text/javascript" src="./js/filereader.js"&gt;&lt;/script&gt; &lt;!--https://github.com/meshesha/filereader.js --&gt;
-          &lt;script type="text/javascript" src="./js/d3.min.js"&gt;&lt;/script&gt; &lt;!-- for charts graphs --&gt;
-          &lt;script type="text/javascript" src="./js/nv.d3.min.js"&gt;&lt;/script&gt; &lt;!-- for charts graphs --&gt;
-          &lt;script type="text/javascript" src="./js/pptxjs.js"&gt;&lt;/script&gt;
-          &lt;script type="text/javascript" src="./js/divs2slides.js"&gt;&lt;/script&gt; &lt;!-- for slide show --&gt;
-      </code></pre>
-       <p>html body :</p>
-       <pre><code>
-         ...
-          &lt;div id="your_div_id_result"&gt;&lt;/div&gt;
-          optional:
-          &lt;input id="upload_pptx_fiile" type="file" /&gt;
-        ...
-        </code></pre>
-       <p>add javascript:</p>
-       <pre><code>
-          &lt;script type="text/javascript"&gt;
-            $("#your_div_id_result").pptxToHtml({
-              pptxFileUrl: "path/to/yore_pptx_file.pptx", 
-              fileInputId: "upload_pptx_fiile",
-              slidesScale: "", //Change Slides scale by percent
-              slideMode: false,
-              keyBoardShortCut: false,
-              mediaProcess: true, /** true,false: if true then process video and audio files */
-              slideModeConfig: {  //on slide mode (slideMode: true)
-                first: 1,
-                nav: false, /** true,false : show or not nav buttons*/
-                navTxtColor: "white", /** color */
-                showPlayPauseBtn: false,/** true,false */
-                keyBoardShortCut: false, /** true,false */
-                showSlideNum: false, /** true,false */
-                showTotalSlideNum: false, /** true,false */
-                autoSlide: false, /** false or seconds (the pause time between slides) , F8 to active(keyBoardShortCut: true) */
-                randomAutoSlide: false, /** true,false ,autoSlide:true */ 
-                loop: false,  /** true,false */
-                background: "black", /** false or color*/
-                transition: "default", /** transition type: "slid","fade","default","random" , to show transition efects :transitionTime &gt; 0.5 */
-                transitionTime: 1 /** transition time in seconds */           
-              }
-            });
-            &lt;/script&gt;
-        </code></pre>
-        
-        <p class="p_heads_1">Setting options:</p>
-        <table class="tg">
-          <tr>
-            <th class="tg-jc4p">#</th>
-            <th class="tg-jc4p">name</th>
-            <th class="tg-jc4p">description</th>
-            <th class="tg-jc4p">default value</th>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">1</td>
-            <td class="tg-yw4l">slidesScale</td>
-            <td class="tg-yw4l">Change Slides scale by percent(%). for orginal size set this option to "" or "100%"</td>
-            <td class="tg-yw4l">""</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">2</td>
-            <td class="tg-yw4l">slideMode</td>
-            <td class="tg-yw4l">If true, turn on presentation mode. The settings of the presentation mode are controlled by the variables "slideModeConfig" </td>
-            <td class="tg-yw4l">false</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">3</td>
-            <td class="tg-yw4l">keyBoardShortCut</td>
-            <td class="tg-yw4l">If true, enable to enter or exit from presentation mode by keyboard shortcut F5 </td>
-            <td class="tg-yw4l">false</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">4</td>
-            <td class="tg-yw4l">mediaProcess</td>
-            <td class="tg-yw4l">if true, then process video and audio files.If 'false', you can not play and see or hear the videos and audios embedded in the presentation.</td>
-            <td class="tg-yw4l">true</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">5</td>
-            <td class="tg-yw4l">jsZipV2</td>
-            <td class="tg-yw4l">url link to jsZip version 2. <br>This allows the ability to load jsZip v.2 in case jsZip v.3 is loaded for another use.</td>
-            <td class="tg-yw4l">false</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">6</td>
-            <td class="tg-yw4l">slideModeConfig</td>
-            <td class="tg-yw4l">settings of the presentation mode.<br> for more details click <a href="https://github.com/meshesha/divs2slides" target="_blank">here</a></td>
-            <td class="tg-yw4l">{}</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">7</td>
-            <td class="tg-yw4l">slideModeConfig.first</td>
-            <td class="tg-yw4l">The first slide that will be loaded.</td>
-            <td class="tg-yw4l">1</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">8</td>
-            <td class="tg-yw4l">slideModeConfig.nav</td>
-            <td class="tg-yw4l">show ('true') or hide ('false') navigator buttons.</td>
-            <td class="tg-yw4l">true</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">9</td>
-            <td class="tg-yw4l">slideModeConfig.navTxtColor</td>
-            <td class="tg-yw4l">color of slide number text and total slides number shown in navigator area.</td>
-            <td class="tg-yw4l">"black"</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">10</td>
-            <td class="tg-yw4l">slideModeConfig.keyBoardShortCut</td>
-            <td class="tg-yw4l">if true , enable to control presentation by keyboard shortcuts.<br> for keyboard shortcuts list click <a href="https://github.com/meshesha/divs2slides" target="_blank">here</a> </td>
-            <td class="tg-yw4l">false</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">11</td>
-            <td class="tg-yw4l">slideModeConfig.showSlideNum</td>
-            <td class="tg-yw4l">if true , show slide number in navigator area.</td>
-            <td class="tg-yw4l">true</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">12</td>
-            <td class="tg-yw4l">slideModeConfig.showTotalSlideNum</td>
-            <td class="tg-yw4l">if true , show total slides number in navigator area.</td>
-            <td class="tg-yw4l">true</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">13</td>
-            <td class="tg-yw4l">slideModeConfig.autoSlide</td>
-            <td class="tg-yw4l">options:'false' or number (seconds). if set 'false' it disable auto slide mode. if set number then auto slide mode will be enabled and the number will be the time between slides.</td>
-            <td class="tg-yw4l">1</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">14</td>
-            <td class="tg-yw4l">slideModeConfig.randomAutoSlide</td>
-            <td class="tg-yw4l">if true and autoSlide mode are enabled then The slides appear in random order.</td>
-            <td class="tg-yw4l">false</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">15</td>
-            <td class="tg-yw4l">slideModeConfig.loop</td>
-            <td class="tg-yw4l">if true, in presentation mode , after last slide will go to first slide. in auto slideMode, the presentation will play in loop.</td>
-            <td class="tg-yw4l">false</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">16</td>
-            <td class="tg-yw4l">slideModeConfig.background</td>
-            <td class="tg-yw4l">color of presentation background.</td>
-            <td class="tg-yw4l">false</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">17</td>
-            <td class="tg-yw4l">slideModeConfig.transition</td>
-            <td class="tg-yw4l">transition types options: "slid","fade","default","random". </td>
-            <td class="tg-yw4l">"default"</td>
-          </tr>
-          <tr>
-            <td class="tg-yw4l">18</td>
-            <td class="tg-yw4l">slideModeConfig.transitionTime</td>
-            <td class="tg-yw4l">Time delay in seconds between slides.</td>
-            <td class="tg-yw4l">1</td>
-          </tr>
-        </table>
-      <!-- ################################################################################################ -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../"><img class="logo" src="../images/logo.svg" alt=""> PPTXjs <span class="ver">v2</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../">Home</a>
+      <a href="demos.html">Demos</a>
+      <a href="docs.html" aria-current="page">Docs</a>
+      <a href="https://github.com/meshesha/PPTXjs">GitHub</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-controls="nav" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-    <!-- / main body -->
-    <div class="clear"></div>
+  </div>
+</header>
+
+<div class="container docs">
+  <nav class="toc" aria-label="On this page">
+    <h4>Getting started</h4>
+    <a href="#install">Installation</a>
+    <a href="#quick-start">Quick start</a>
+    <a href="#frameworks">Frameworks</a>
+    <h4>Viewer</h4>
+    <a href="#options">Options</a>
+    <a href="#slideshow">Slideshow &amp; keyboard</a>
+    <a href="#methods">Methods &amp; events</a>
+    <a href="#styling">Styling</a>
+    <h4>Editing</h4>
+    <a href="#editor">Editor UI</a>
+    <a href="#document">Document API</a>
+    <a href="#export">Export .pptx / .odp</a>
+    <h4>More</h4>
+    <a href="#node">Node.js &amp; workers</a>
+    <a href="#rtl">Right-to-left</a>
+    <a href="#support">What is supported</a>
+    <a href="#security">Security</a>
+    <a href="#errors">Errors</a>
+    <a href="#migration">Migrating from v1</a>
+  </nav>
+
+  <main id="main" class="prose">
+    <h1 style="font-size: clamp(1.9rem, 4vw, 2.6rem)">Documentation</h1>
+    <p class="muted">PPTXjs v2 renders, presents, edits and exports PowerPoint (.pptx) files in the browser. It is written in TypeScript, has
+      no jQuery and one runtime dependency (<a href="https://github.com/101arrowz/fflate">fflate</a>). The renderer has no DOM dependency, so it also runs in Node.js and Web Workers.</p>
+
+    <h2 id="install">Installation</h2>
+<pre><code>npm install @meshesha/pptxjs</code></pre>
+    <p>Without a bundler, use the single-file browser build. It exposes <code>window.PPTXjs</code>, registers the
+      <code>&lt;pptx-viewer&gt;</code> and <code>&lt;pptx-editor&gt;</code> elements, and installs the jQuery plugin when jQuery is present.</p>
+<pre><code>&lt;script src="https://unpkg.com/@meshesha/pptxjs/dist/pptxjs.umd.js"&gt;&lt;/script&gt;</code></pre>
+    <p>The styles are injected automatically. <code>@meshesha/pptxjs/style.css</code> is available if you prefer a static stylesheet.</p>
+
+    <h2 id="quick-start">Quick start</h2>
+<pre><code>import { PptxViewer } from "@meshesha/pptxjs";
+
+const viewer = new PptxViewer("#slides", { mode: "list", scale: "fit" });
+viewer.on("load", ({ presentation }) => console.log(presentation.slides.length, "slides"));
+viewer.on("error", ({ error }) => console.error(error.code, error.message));
+
+await viewer.load("deck.pptx");      // URL, URL object, File, Blob, ArrayBuffer or Uint8Array
+
+// a file chosen by the user
+input.addEventListener("change", () => viewer.load(input.files[0]));</code></pre>
+
+    <h2 id="frameworks">Frameworks</h2>
+    <h3>React</h3>
+<pre><code>import { PptxViewer, PptxEditor } from "@meshesha/pptxjs/react";
+
+&lt;PptxViewer ref={viewerRef} src={file} options={{ mode: "slideshow" }}
+            onLoad={(p) => …} onError={(e) => …} onSlideChange={(i) => …} /&gt;</code></pre>
+    <p>The ref exposes the viewer instance (<code>next()</code>, <code>toggleFullscreen()</code> …). In Next.js, render it on the client only.</p>
+    <h3>Vue 3</h3>
+<pre><code>import { PptxViewer, PptxEditor, PptxPlugin } from "@meshesha/pptxjs/vue";
+
+&lt;PptxViewer src="/deck.pptx" :options="{ mode: 'slideshow' }" @load="onLoad" @slidechange="onSlide" /&gt;</code></pre>
+    <h3>Angular</h3>
+<pre><code>// main.ts
+import { definePptxElements } from "@meshesha/pptxjs/angular";
+definePptxElements();
+
+// standalone component with schemas: [CUSTOM_ELEMENTS_SCHEMA]
+&lt;pptx-viewer [attr.src]="url" mode="slideshow" (pptx-load)="loaded($event)"&gt;&lt;/pptx-viewer&gt;</code></pre>
+    <p>A copy-paste Angular component with <code>@Input()</code>/<code>@Output()</code> is in the repository under <code>examples/angular</code>.</p>
+    <h3>jQuery</h3>
+<pre><code>import { installJQueryPlugin } from "@meshesha/pptxjs/jquery";
+installJQueryPlugin($);   // automatic with the &lt;script&gt; build
+
+$("#result").pptxToHtml({ pptxFileUrl: "deck.pptx", slideMode: true });   // v1 API
+$("#result").pptxViewer({ src: "deck.pptx", mode: "slideshow" });         // v2 style</code></pre>
+    <h3>Web Components</h3>
+<pre><code>&lt;pptx-viewer src="deck.pptx" mode="slideshow" scale="fit" transition="slide" autoplay="5" loop&gt;&lt;/pptx-viewer&gt;
+&lt;pptx-editor src="deck.pptx" style="display:block;height:600px"&gt;&lt;/pptx-editor&gt;</code></pre>
+    <p>Events: <code>pptx-load</code>, <code>pptx-error</code>, <code>pptx-slidechange</code>, <code>pptx-change</code> (editor). The <code>source</code> property accepts files and bytes.</p>
+
+    <h2 id="options">Viewer options</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>mode</code></td><td><code>"list"</code></td><td><code>"list"</code> shows all slides; <code>"slideshow"</code> shows one at a time.</td></tr>
+        <tr><td><code>scale</code></td><td><code>"fit"</code></td><td><code>"fit"</code> uses the container width, <code>"contain"</code> uses width and height, or a number (1 = 100%).</td></tr>
+        <tr><td><code>slideshow</code></td><td></td><td>See <a href="#slideshow">Slideshow</a>.</td></tr>
+        <tr><td><code>keyboard</code></td><td><code>true</code></td><td>Shortcuts while the viewer has focus; <code>"global"</code> for page-wide; <code>false</code> to disable.</td></tr>
+        <tr><td><code>textDirection</code></td><td><code>"file"</code></td><td>Paragraphs without a declared direction: like PowerPoint, <code>"auto"</code> (detect Hebrew/Arabic), or <code>"rtl"</code>.</td></tr>
+        <tr><td><code>dir</code></td><td><code>"auto"</code></td><td>Direction of the viewer interface; <code>auto</code> follows the page.</td></tr>
+        <tr><td><code>themeProcess</code></td><td><code>true</code></td><td>Draw layout and master content; <code>"colorsAndImageOnly"</code> or <code>false</code> to limit it.</td></tr>
+        <tr><td><code>mediaProcess</code></td><td><code>true</code></td><td>Play embedded video and audio.</td></tr>
+        <tr><td><code>externalMedia</code></td><td><code>false</code></td><td>Embed linked videos (YouTube…) in a sandboxed iframe instead of showing a link.</td></tr>
+        <tr><td><code>skipHiddenSlides</code></td><td><code>false</code></td><td>Leave out slides hidden in PowerPoint.</td></tr>
+        <tr><td><code>slides</code></td><td>all</td><td>Only render these slide numbers, e.g. <code>[1, 3]</code>.</td></tr>
+        <tr><td><code>showProgress</code></td><td><code>true</code></td><td>Progress bar while loading.</td></tr>
+        <tr><td><code>gap</code></td><td><code>24</code></td><td>Space between slides in list mode (px).</td></tr>
+        <tr><td><code>limits</code></td><td>512 MiB / 20 000</td><td><code>{ maxUncompressedSize, maxEntries }</code>: protection against zip bombs.</td></tr>
+        <tr><td><code>fetchOptions</code></td><td></td><td>Passed to <code>fetch()</code> when loading a URL (headers, credentials).</td></tr>
+        <tr><td><code>onWarning</code></td><td></td><td>Called for non-fatal rendering problems.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="slideshow">Slideshow &amp; keyboard</h2>
+<pre><code>new PptxViewer("#slides", {
+  mode: "slideshow",
+  slideshow: {
+    first: 1,                 // first slide
+    nav: true,                // toolbar
+    showSlideNumber: true,    // "3 / 12"
+    autoplay: 5,              // seconds, or false
+    loop: true,
+    random: false,
+    transition: "fade",       // "none" | "fade" | "slide" | "zoom" | "random"
+    transitionDuration: 0.4,  // seconds
+    background: "#000"        // stage colour in slideshow/fullscreen
+  }
+});</code></pre>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Key</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>→</kbd> <kbd>↓</kbd> <kbd>PgDn</kbd> <kbd>Space</kbd></td><td>Next slide (in an RTL interface, <kbd>←</kbd> moves forward)</td></tr>
+        <tr><td><kbd>←</kbd> <kbd>↑</kbd> <kbd>PgUp</kbd> <kbd>Backspace</kbd></td><td>Previous slide</td></tr>
+        <tr><td><kbd>Home</kbd> / <kbd>End</kbd></td><td>First / last slide</td></tr>
+        <tr><td><kbd>F</kbd></td><td>Fullscreen</td></tr>
+        <tr><td><kbd>P</kbd></td><td>Play / pause</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="methods">Methods &amp; events</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Method</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>load(source)</code></td><td>Load and render; returns a Promise of the rendered presentation. A newer call cancels an older one.</td></tr>
+        <tr><td><code>goTo(i)</code>, <code>next()</code>, <code>prev()</code>, <code>first()</code>, <code>last()</code></td><td>Navigation (0-based index).</td></tr>
+        <tr><td><code>play(seconds?)</code>, <code>pause()</code></td><td>Autoplay.</td></tr>
+        <tr><td><code>setMode(mode)</code>, <code>setOptions(partial)</code></td><td>Change mode and options at runtime.</td></tr>
+        <tr><td><code>toggleFullscreen()</code></td><td>Fullscreen on the viewer element.</td></tr>
+        <tr><td><code>getSlideElement(i)</code></td><td>The rendered <code>.slide</code> element.</td></tr>
+        <tr><td><code>on(event, fn)</code></td><td>Subscribe; returns an unsubscribe function.</td></tr>
+        <tr><td><code>destroy()</code></td><td>Remove DOM, listeners, timers and object URLs.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Properties: <code>slideCount</code>, <code>currentIndex</code>, <code>currentMode</code>, <code>playing</code>, <code>isRtl</code>, <code>result</code>.
+      Events: <code>loadstart</code>, <code>progress</code>, <code>load</code>, <code>error</code>, <code>warning</code>, <code>slidechange</code>,
+      <code>modechange</code>, <code>fullscreenchange</code>.</p>
+
+    <h2 id="styling">Styling</h2>
+    <p>Slide styles are scoped to the viewer and isolated from common CSS resets (Bootstrap, Tailwind), so several viewers can share a page.
+      Style the viewer interface with these classes: <code>.pptxjs-toolbar</code>, <code>.pptxjs-btn</code>, <code>.pptxjs-counter</code>,
+      <code>.pptxjs-progress-bar</code>, <code>.pptxjs-slide-wrap</code>, plus the modes <code>.pptxjs-mode-slideshow</code> and <code>.pptxjs-fullscreen</code>.
+      Each top-level shape is wrapped in <code>[data-shape-id]</code>, which is handy for click handlers.</p>
+
+    <h2 id="editor">Editor UI</h2>
+<pre><code>const editor = new PptxEditor("#editor", { fileName: "q3-review" });
+await editor.load("deck.pptx");
+editor.download("pptx");   // or "odp"</code></pre>
+    <p>The toolbar provides undo/redo, adding text boxes, shapes and pictures, bold/italic/underline, size, colour, alignment, fill, arrange, duplicate and delete,
+      and slide add/duplicate/move/hide/delete. A slide panel shows thumbnails. On the canvas: click to select, drag to move, use the handles to resize
+      (<kbd>Shift</kbd> keeps the aspect ratio), and double-click to edit text. Shortcuts: <kbd>Del</kbd>, the arrow keys, <kbd>Ctrl</kbd>+<kbd>Z</kbd>/<kbd>Y</kbd>/<kbd>D</kbd>/<kbd>B</kbd>/<kbd>I</kbd>/<kbd>U</kbd>.
+      Options: <code>toolbar</code>, <code>thumbnails</code>, <code>readOnly</code>, <code>fileName</code>, plus all viewer options.</p>
+
+    <h2 id="document">Document API</h2>
+    <p><code>PresentationDocument</code> edits the real OOXML parts. Every call is one undoable step, it works without any UI (including in Node.js),
+      and units are CSS pixels.</p>
+<pre><code>import { PresentationDocument, exportPptx } from "@meshesha/pptxjs";
+
+const doc = await PresentationDocument.load(bytes);
+const id = doc.addTextBox(0, { x: 80, y: 60, width: 400, height: 60 }, "Hello", { size: 32, bold: true });
+doc.setShapeFill(0, id, "#FFE699");
+doc.setShapeBounds(0, id, { x: 120 });
+doc.duplicateSlide(0);
+doc.undo();
+const blob = exportPptx(doc);</code></pre>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Area</th><th>Methods</th></tr></thead>
+      <tbody>
+        <tr><td>Slides</td><td><code>slides()</code>, <code>addSlide()</code>, <code>duplicateSlide()</code>, <code>moveSlide()</code>, <code>deleteSlide()</code>, <code>setSlideHidden()</code>, <code>getNotes()</code></td></tr>
+        <tr><td>Shapes</td><td><code>getShapes()</code>, <code>getShape()</code>, <code>setShapeBounds()</code>, <code>setShapeRotation()</code>, <code>duplicateShape()</code>, <code>deleteShape()</code>, <code>reorderShape()</code></td></tr>
+        <tr><td>Text &amp; style</td><td><code>setShapeText()</code>, <code>setTextStyle()</code>, <code>setShapeFill()</code>, <code>setShapeLine()</code></td></tr>
+        <tr><td>Insert</td><td><code>addTextBox()</code>, <code>addShape(slide, "star5", …)</code>, <code>addImage()</code></td></tr>
+        <tr><td>History</td><td><code>undo()</code>, <code>redo()</code>, <code>transact()</code>, <code>on("change")</code></td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="export">Export .pptx / .odp</h2>
+    <p><strong>PPTX</strong> export is lossless: untouched parts (themes, charts, media, custom XML) are written back byte for byte, and media that is no longer used is removed.
+      <strong>ODP</strong> export converts text (with fonts, colours and alignment), shapes (explicit geometry), pictures, tables, charts (as SVG),
+      backgrounds, master decorations and speaker notes. Both have been checked in Microsoft PowerPoint.</p>
+<pre><code>import { exportPptx, exportOdp } from "@meshesha/pptxjs";
+const pptx = exportPptx(docOrPackage);            // Blob
+const odp = exportOdp(docOrPackage, { includeNotes: true });</code></pre>
+    <div class="callout"><p>ODP limitations: picture, gradient and pattern fills inside shapes become solid colours; WordArt effects, animations, video and editable charts are not converted.</p></div>
+
+    <h2 id="node">Node.js &amp; Web Workers</h2>
+<pre><code>import { renderToHtml, renderToHtmlString } from "@meshesha/pptxjs";
+import { readFile } from "node:fs/promises";
+
+const { slides, css, width, height } = await renderToHtml(await readFile("deck.pptx"));
+slides[0].html;    // HTML of slide 1
+slides[0].notes;   // speaker notes
+
+const fragment = await renderToHtmlString(await readFile("deck.pptx"));   // slides + CSS</code></pre>
+    <p>In a Web Worker, call <code>renderToHtml(bytes)</code> and send the HTML strings to the page.</p>
+
+    <h2 id="rtl">Right-to-left (Hebrew, Arabic…)</h2>
+    <p>Paragraphs marked RTL in the file render right to left, with correct punctuation, RTL bullets and Hebrew numbering. For files without direction information,
+      use <code>textDirection: "auto"</code> (detects Hebrew/Arabic from the text) or <code>"rtl"</code>. On pages with <code>dir="rtl"</code> the interface is mirrored
+      automatically; <code>dir: "rtl" | "ltr"</code> overrides it. Hebrew typed in the editor is saved as RTL, and ODP export keeps the direction.
+      <a href="demos.html#rtl">See the demo.</a></p>
+<pre><code>new PptxViewer("#slides", { textDirection: "auto", dir: "rtl" });</code></pre>
+
+    <h2 id="support">What is supported</h2>
+    <ul>
+      <li><strong>Text:</strong> fonts, sizes, colours, bold, italic, underline, strike, caps, highlight, safe hyperlinks, bullets (characters, pictures, Symbol/Wingdings), all auto-numbering schemes, alignment, indents and RTL.</li>
+      <li><strong>Shapes:</strong> 180+ preset shapes, custom geometry, rotation, flip, solid/gradient/pattern/picture fills, outlines, arrows, shadows (partial).</li>
+      <li><strong>Pictures:</strong> PNG, JPEG, GIF, SVG, BMP, WebP and TIFF (browser dependent). EMF/WMF can't be displayed by browsers.</li>
+      <li><strong>Tables</strong> with theme styles and merged cells; <strong>charts:</strong> bar/column, line, area, pie, doughnut, scatter and combos; <strong>SmartArt</strong> (drawn from its cached drawing).</li>
+      <li><strong>Media:</strong> embedded video and audio; linked videos are opt-in.</li>
+      <li><strong>Slides:</strong> backgrounds, layouts and masters, hidden slides, slide order, speaker notes and links between slides.</li>
+      <li><strong>Browsers:</strong> current Chrome, Edge, Firefox and Safari; Node.js 18+. Internet Explorer is not supported (use v1).</li>
+    </ul>
+
+    <h2 id="security">Security</h2>
+    <p>Presentations are untrusted input. PPTXjs escapes all document content when parsing, so files can't inject markup or script. It only allows safe link
+      schemes (no <code>javascript:</code>), opens external links with <code>rel="noopener"</code>, never embeds third-party pages unless you opt in (and then sandboxes them),
+      rejects zip bombs, never touches global prototypes, and never loads scripts at runtime.</p>
+
+    <h2 id="errors">Errors</h2>
+    <p>Errors are <code>PptxError</code> instances with a <code>code</code>: <code>INVALID_FILE</code>, <code>LIMIT_EXCEEDED</code>, <code>FETCH_FAILED</code>,
+      <code>RENDER_WARNING</code> (non-fatal, through the <code>warning</code> event), <code>EXPORT_FAILED</code> or <code>ABORTED</code>.
+      A slide that fails to render is replaced by a placeholder; the other slides still render.</p>
+
+    <h2 id="migration">Migrating from v1</h2>
+    <p>Replace the nine v1 script tags (jQuery plugins, JSZip, FileReader, d3, nvd3, dingbat, divs2slides) and two stylesheets with one bundle.
+      <code>$(…).pptxToHtml()</code> keeps working when jQuery is on the page.</p>
+<pre><code>&lt;script src="jquery.min.js"&gt;&lt;/script&gt;          &lt;!-- only if your page uses jQuery --&gt;
+&lt;script src="pptxjs.umd.js"&gt;&lt;/script&gt;</code></pre>
+    <div class="table-wrap"><table>
+      <thead><tr><th>v1 option</th><th>v2</th></tr></thead>
+      <tbody>
+        <tr><td><code>pptxFileUrl</code> / <code>fileInputId</code></td><td><code>viewer.load(url)</code> / <code>viewer.load(file)</code></td></tr>
+        <tr><td><code>slideMode: true</code></td><td><code>mode: "slideshow"</code></td></tr>
+        <tr><td><code>slidesScale: "50%"</code></td><td><code>scale: 0.5</code> (default is now fit to width)</td></tr>
+        <tr><td><code>keyBoardShortCut</code></td><td><code>keyboard: "global"</code></td></tr>
+        <tr><td><code>slideModeConfig.autoSlide</code></td><td><code>slideshow.autoplay</code></td></tr>
+        <tr><td><code>slideModeConfig.randomAutoSlide</code></td><td><code>slideshow.random</code></td></tr>
+        <tr><td><code>slideModeConfig.transition: "slid"</code></td><td><code>slideshow.transition: "slide"</code></td></tr>
+        <tr><td><code>slideModeConfig.transitionTime</code></td><td><code>slideshow.transitionDuration</code></td></tr>
+        <tr><td><code>jsZipV2</code>, <code>slideType: "revealjs"</code></td><td>Removed (no JSZip, no runtime script loading)</td></tr>
+      </tbody>
+    </table></div>
+    <p>Behaviour changes: slide order follows the presentation (not file names), text wraps at word boundaries, charts are SVG, keyboard shortcuts no longer
+      capture keys page-wide, and errors are catchable. The full guide is in the
+      <a href="https://github.com/meshesha/PPTXjs/blob/master/docs/migration-v1-to-v2.md">repository</a>.</p>
   </main>
 </div>
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
-    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="https://github.com/meshesha/">Tady Meshesha</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2017–<span data-year>2026</span> <a href="https://github.com/meshesha/">Tady Meshesha</a> · MIT License</p>
+    <nav aria-label="Footer">
+      <a href="../">Home</a>
+      <a href="demos.html">Demos</a>
+      <a href="https://github.com/meshesha/PPTXjs">GitHub</a>
+    </nav>
   </div>
-</div>
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
-<script src="../layout/scripts/jquery.min.js"></script>
-<script src="../layout/scripts/jquery.backtotop.js"></script>
-<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+</footer>
+<script src="../assets/site.js"></script>
 </body>
 </html>
