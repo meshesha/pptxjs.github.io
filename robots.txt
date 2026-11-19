@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pptx.js.org/sitemap.xml

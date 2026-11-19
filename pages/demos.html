@@ -1,123 +1,178 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>PPTXjs | Demos </title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link rel="stylesheet" href="./css/pptxjs.css">
-<link rel="stylesheet" href="./css/nv.d3.min.css">
-
-<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="./js/jszip.min.js"></script>
-
-<script type="text/javascript" src="./js/filereader.js"></script>
-
-<script type="text/javascript" src="./js/d3.min.js"></script>
-<script type="text/javascript" src="./js/nv.d3.min.js"></script>
-<script type="text/javascript" src="./js/pptxjs.min.js"></script>
-<script type="text/javascript" src="./js/divs2slides.js"></script>
-
-<style>
-  #slide-resolte-box{
-    width: 600px;
-    height: 500px;
-    overflow: auto;
-  }
-  .code-container{
-    overflow: scroll;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demos · PPTXjs</title>
+  <meta name="description" content="Live PPTXjs demos: view all slides, slideshow, open your own .pptx, edit it in the browser, export to .pptx and .odp, right-to-left (Hebrew) support.">
+  <link rel="canonical" href="https://pptx.js.org/pages/demos.html">
+  <meta name="theme-color" content="#c43e1c">
+  <link rel="icon" href="../images/logo.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="../lib/pptxjs.css">
+  <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body id="top">
-<div class="wrapper row1">
-    <header id="header" class="hoc clear">
-        <div id="logo" class="fl_left">
-        <h1><a href="../index.html">PPTXjs</a></h1>
-        </div>
-        <nav id="mainav" class="fl_right">
-        <ul class="clear">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="docs.html">Docs</a></li>
-            <li class="active"><a href="demos.html">Demos</a></li>
-            <li><a href="https://github.com/meshesha">About</a></li>
-        </ul>
-        </nav>
-    </header>
-</div>
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <div class="sidebar one_quarter first"> 
-      <h6>Demos</h6>
-      <nav class="sdb_holder">
-        <ul>
-          <li class="active"><a href="demos.html">Demo1 - show all slides</a></li>
-          <li><a href="demo2.html">Demo2 - show in slide Mode</a></li>
-          <li><a href="demo3.html">Demo3 - Input</a></li>
-	  <li><a href="demo_revealjs.html">Demo4 - revealjs</a></li>
-        </ul>
-      </nav>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../"><img class="logo" src="../images/logo.svg" alt=""> PPTXjs <span class="ver">v2</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="../">Home</a>
+      <a href="demos.html" aria-current="page">Demos</a>
+      <a href="docs.html">Docs</a>
+      <a href="https://github.com/meshesha/PPTXjs">GitHub</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-controls="nav" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-    <!-- ################################################################################################ -->
-    <!-- ################################################################################################ -->
-    <div class="content three_quarter"> 
-        <div class="box bg-light clear"> 
-          <!-- ################################################################################################ -->
-          <h3 class="font-x2">Demo1 - view all slides</h3>
-          <p>File: <a href="/Sample_demo1.pptx">Sample_demo1.pptx</a></p>
-          <p>Description:</p>
-          <p>View all slides of "Sample_demo1.pptx" file in choosen div.</p>
-          <p>Code:</p>
-          <div class="code-container">
-            <pre>
-              <code>
-&lt;div id=&quot;slide-resolte-contaniner&quot; &gt;&lt;/div&gt; 
-&lt;script&gt; 
-  $(&quot;#slide-resolte-contaniner&quot;).pptxToHtml({ 
-    pptxFileUrl: &quot;Sample_demo1.pptx&quot;, 
-    slidesScale: &quot;50%&quot;, 
-    slideMode: false, 
-    keyBoardShortCut: false 
-  }); 
-&lt;/script&gt;
-              </code>
-            </pre>
-          </div>
-          <p>Resolte:</p>
-	   <div id="slide-resolte-box">
-          	<div id="slide-resolte-contaniner" ></div>
-	   </div>
-          <script>
-              $("#slide-resolte-contaniner").pptxToHtml({
-                pptxFileUrl: "Sample_demo1.pptx",
-                slideMode: false,
-		slidesScale: "50%",
-                keyBoardShortCut: false
-              });
-            </script>
+  </div>
+</header>
+
+<main id="main" class="container" style="padding: 36px 0 72px">
+  <h1 style="font-size: clamp(1.9rem, 4vw, 2.6rem)">Live demos</h1>
+  <p class="muted" style="max-width: 70ch">Everything runs in your browser; files you open never leave your computer.
+    Pick a demo, then open your own <code>.pptx</code> with the button below or by dropping it anywhere on the page.</p>
+
+  <div class="toolbar-row">
+    <label class="btn primary small" for="file-input">Open .pptx…</label>
+    <input id="file-input" type="file" accept=".pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation" hidden>
+    <select id="sample" class="btn small" aria-label="Sample presentation">
+      <option value="Sample_demo1.pptx">Sample: PPTXjs demo deck</option>
+      <option value="../samples/hebrew-rtl.pptx">Sample: Hebrew / RTL</option>
+    </select>
+    <span id="current-file" class="muted" aria-live="polite"></span>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Demos">
+    <button role="tab" id="t-viewer" aria-controls="p-viewer" aria-selected="true">All slides</button>
+    <button role="tab" id="t-slideshow" aria-controls="p-viewer" aria-selected="false" tabindex="-1">Slideshow</button>
+    <button role="tab" id="t-editor" aria-controls="p-editor" aria-selected="false" tabindex="-1">Editor</button>
+    <button role="tab" id="t-convert" aria-controls="p-convert" aria-selected="false" tabindex="-1">Convert &amp; export</button>
+    <button role="tab" id="t-code" aria-controls="p-code" aria-selected="false" tabindex="-1">Code</button>
+  </div>
+
+  <!-- viewer + slideshow share one panel -->
+  <section role="tabpanel" id="p-viewer" aria-labelledby="t-viewer">
+    <div class="demo-layout">
+      <aside class="panel" aria-label="Viewer options">
+        <h3>Options</h3>
+        <label class="field">Scale
+          <select id="o-scale"><option value="fit">Fit width</option><option value="contain">Fit screen</option><option value="0.5">50%</option><option value="1">100%</option></select>
+        </label>
+        <label class="field">Transition
+          <select id="o-transition"><option>fade</option><option>slide</option><option>zoom</option><option>random</option><option>none</option></select>
+        </label>
+        <label class="field">Autoplay (seconds, 0 = off)
+          <input id="o-autoplay" type="number" min="0" max="60" value="0">
+        </label>
+        <label class="field check"><input id="o-loop" type="checkbox"> Loop</label>
+        <label class="field">Text direction
+          <select id="o-textdir"><option value="file">From file (like PowerPoint)</option><option value="auto">Auto-detect Hebrew / Arabic</option><option value="rtl">Right to left</option></select>
+        </label>
+        <label class="field">Interface direction
+          <select id="o-dir"><option value="auto">Auto (page)</option><option value="ltr">Left to right</option><option value="rtl">Right to left</option></select>
+        </label>
+        <label class="field">Theme
+          <select id="o-theme"><option value="true">Full theme</option><option value="colorsAndImageOnly">Colours &amp; images only</option><option value="false">None</option></select>
+        </label>
+        <label class="field check"><input id="o-hidden" type="checkbox"> Skip hidden slides</label>
+        <div class="toolbar-row" style="margin: 6px 0 0">
+          <button class="btn small" id="b-prev" type="button" aria-label="Previous slide">‹</button>
+          <button class="btn small" id="b-next" type="button" aria-label="Next slide">›</button>
+          <button class="btn small" id="b-fs" type="button">Fullscreen</button>
         </div>
+        <p class="muted" style="font-size:.82rem;margin-top:12px">Keys: <kbd>←</kbd> <kbd>→</kbd> <kbd>Space</kbd> <kbd>Home</kbd> <kbd>End</kbd>, <kbd>F</kbd> fullscreen, <kbd>P</kbd> play (click the slides first).</p>
+        <h3 style="margin-top:18px">Events</h3>
+        <ol class="log" id="log" aria-live="polite"></ol>
+      </aside>
+      <div class="stage"><div id="viewer"></div></div>
     </div>
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
-<script>
-$(document).ready(function(){
-	var myDiv = $("#slide-resolte-box");
-	var scrollto = (myDiv.width()/2);
-	myDiv.animate({ scrollLeft:  scrollto});
-});
-</script>
-<div class="wrapper row5">
-        <div id="copyright" class="hoc clear"> 
-          <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="https://github.com/meshesha/">Tady Meshesha</a></p>
-          <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </section>
+
+  <section role="tabpanel" id="p-editor" aria-labelledby="t-editor" hidden>
+    <p class="muted">Click a shape to select it, drag to move, use the handles to resize, and double-click to edit text.
+      <kbd>Del</kbd> deletes, the arrow keys nudge, <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd> undo and redo. Download the result as .pptx or .odp from the toolbar.</p>
+    <div class="editor-host" id="editor"></div>
+  </section>
+
+  <section role="tabpanel" id="p-convert" aria-labelledby="t-convert" hidden>
+    <div class="demo-layout" style="grid-template-columns: minmax(0,1fr) minmax(0,1fr)">
+      <div class="panel">
+        <h3>Convert</h3>
+        <p>The renderer needs no DOM, so the same code converts presentations in Web Workers and Node.js.</p>
+        <div class="toolbar-row">
+          <button class="btn primary small" id="c-html" type="button">Download as HTML</button>
+          <button class="btn small" id="c-odp" type="button">Convert to .odp</button>
+          <button class="btn small" id="c-pptx" type="button">Re-save as .pptx</button>
         </div>
+        <p id="c-stats" class="muted" aria-live="polite"></p>
+        <pre><code>import { renderToHtml, exportOdp, loadPptx } from "@meshesha/pptxjs";
+
+const { slides, css } = await renderToHtml(file);
+const odp = exportOdp(await loadPptx(file));   // Blob</code></pre>
       </div>
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
-<script src="../layout/scripts/jquery.backtotop.js"></script>
-<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+      <div class="panel">
+        <h3>Slides &amp; speaker notes</h3>
+        <ol class="notes-list" id="c-notes"><li class="muted">Click “Download as HTML” to analyse the presentation.</li></ol>
+      </div>
+    </div>
+  </section>
+
+  <section role="tabpanel" id="p-code" aria-labelledby="t-code" hidden>
+    <div class="demo-layout" style="grid-template-columns: minmax(0,1fr) minmax(0,1fr)">
+      <div>
+        <h3>All slides</h3>
+<pre><code>&lt;script src="pptxjs.umd.js"&gt;&lt;/script&gt;
+&lt;div id="slides"&gt;&lt;/div&gt;
+&lt;script&gt;
+  const viewer = new PPTXjs.PptxViewer("#slides");
+  viewer.load("Sample_demo1.pptx");
+&lt;/script&gt;</code></pre>
+        <h3>Slideshow</h3>
+<pre><code>new PPTXjs.PptxViewer("#slides", {
+  mode: "slideshow",
+  slideshow: { autoplay: 5, loop: true, transition: "fade" }
+}).load("Sample_demo1.pptx");</code></pre>
+      </div>
+      <div>
+        <h3>Open a local file</h3>
+<pre><code>const viewer = new PPTXjs.PptxViewer("#slides");
+input.addEventListener("change", () => viewer.load(input.files[0]));</code></pre>
+        <h3>Editor</h3>
+<pre><code>const editor = new PPTXjs.PptxEditor("#editor");
+await editor.load("Sample_demo1.pptx");
+editor.download("pptx");   // or "odp"</code></pre>
+        <h3>Hebrew / Arabic without direction info</h3>
+<pre><code>new PPTXjs.PptxViewer("#slides", { textDirection: "auto" });</code></pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="drop-overlay" class="dropzone" hidden style="position:fixed;inset:16px;z-index:60;background:var(--accent-tint);font-size:1.3rem">
+  <strong>Drop the .pptx file to open it</strong>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2017–<span data-year>2026</span> <a href="https://github.com/meshesha/">Tady Meshesha</a> · MIT License</p>
+    <nav aria-label="Footer">
+      <a href="../">Home</a>
+      <a href="docs.html">Docs</a>
+      <a href="https://github.com/meshesha/PPTXjs">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../lib/pptxjs.umd.js"></script>
+<script src="../assets/site.js"></script>
+<script src="../assets/demos.js"></script>
 </body>
 </html>

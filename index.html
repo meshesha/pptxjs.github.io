@@ -1,119 +1,186 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>PPTXjs</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<meta name="google-site-verification" content="LxhqACGw3-ulhG0TwI2_yyUR17sAOxhZfvsFH4WlFgY" />  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109745538-1"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPTXjs: PowerPoint in the browser</title>
+  <meta name="description" content="Render, present, edit and export PowerPoint (.pptx) files in the browser with pure JavaScript. No server, no jQuery. React, Vue, Angular, jQuery and Web Components.">
+  <link rel="canonical" href="https://pptx.js.org/">
+  <meta property="og:title" content="PPTXjs: PowerPoint in the browser">
+  <meta property="og:description" content="Render, present, edit and export .pptx files in the browser. Open source, MIT.">
+  <meta property="og:url" content="https://pptx.js.org/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#c43e1c">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="lib/pptxjs.css">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
-<body id="top">
-<div class="wrapper bgded" style="background-image:url('images/pptxjs.png');">
-  <div id="pageintro" class="hoc split clear">
-    <article class="box bg-coloured clear"> 
-      <h2 class="heading">PPTXjs - Meshesha</h2>
-      <p>jQuery plugin for convertation pptx to html using pure javascript.</p>
-      <footer>
-        <ul class="nospace inline pushright">
-          <li><a class="btn" href="https://github.com/meshesha/PPTXjs/releases">Download</a></li>
-          <li><a class="btn inverse" href="https://github.com/meshesha/PPTXjs">GitHub</a></li>
-        </ul>
-      </footer>
-    </article>
-  </div>
-</div>
-<div class="wrapper row1">
-  <header id="header" class="hoc clear">
-    <div id="logo" class="fl_left">
-      <h1><a href="index.html">PPTXjs</a></h1>
-    </div>
-    <nav id="mainav" class="fl_right">
-      <ul class="clear">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="pages/docs.html">Docs</a></li>
-        <li><a href="pages/demos.html">Demos</a></li>
-        <li><a href="https://github.com/meshesha">About</a></li>
-      </ul>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="./"><img class="logo" src="images/logo.svg" alt=""> PPTXjs <span class="ver">v2</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="./" aria-current="page">Home</a>
+      <a href="pages/demos.html">Demos</a>
+      <a href="pages/docs.html">Docs</a>
+      <a href="https://github.com/meshesha/PPTXjs">GitHub</a>
     </nav>
-  </header>
-</div>
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <div class="one_half first clear btmspace-80">
-      <h3 class="font-x2">Description</h3>
-      <p class="font-x1">jQuery plugin written in pure javascript for converting pptx file to html.</p>
-    </div>
-    <div class="group">
-      <article class="one_third first">
-        <h4>Supported browsers</h4>
-        <p>Supports modern browsers such as FireFox, Chrome, Edge etc.
-            But I have not checked in all browsers. For details see <a href="pages/docs.html">DOCS</a>.</p>
-      </article>
-      <article class="one_third">
-        <h4>LICENSE </h4>
-        <p>MIT licence - <a href="https://github.com/meshesha/PPTXjs/blob/master/LICENSE" target="_blank">for more details click here.</a></p>
-      </article>
-      <article class="one_third">
-        <h4>issues</h4>
-        <p>soon...</p>
-      </article>
-    </div>
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
-
-<div class="wrapper bgded" style="background-image:url('images/pptxjs.png');">
-  <div id="elements" class="hoc split clear">
-    <div class="box bg-light clear"> 
-      <h3 class="font-x2">inspiration</h3>
-      <p class="btmspace-50">websites and other projects that help me to write this project.</p>
-      <article><a href="#"><i class="fa fa-diamond"></i></a>
-        <h6 class="heading">PPTX2HTML</h6>
-        <p>PPTX2HTML can convert MS-PPTX file to HTML by using pure javascript.</p>
-        <p>Issues: not Supports most of shapes , audio, video etc. 
-        <footer><a href="https://github.com/g21589/PPTX2HTML">Read More &raquo;</a></footer>
-      </article>
-      <article><a href="#"><i class="fa fa-diamond"></i></a>
-        <h6 class="heading">https://meshesha.github.io/presetShapeDefinitions</h6>
-        <p>A site I built that helped me understand the formulas in the file presetShapeDefinitions.xml. </p>
-        <footer><a href="https://meshesha.github.io/presetShapeDefinitions/">Read More &raquo;</a></footer>
-      </article>
-      <article><a href="#"><i class="fa fa-diamond"></i></a>
-        <h6 class="heading">websites</h6>
-        <ul>
-          <li><a href="http://officeopenxml.com/">officeopenxml</a></li>
-          <li><a href="http://www.ecma-international.org/publications/standards/Ecma-376.htm">Standard ECMA-376</a></li>
-        </ul>
-      </article>
-      <!-- ################################################################################################ -->
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-controls="nav" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
-</div>
+</header>
 
-<div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
-    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="https://github.com/meshesha/">Tady Meshesha</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+<main id="main">
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="eyebrow">New in v2: editor, export, no jQuery</span>
+        <h1>PowerPoint in the browser.</h1>
+        <p class="lead">Render, present, edit and export <strong>.pptx</strong> files with pure JavaScript. No server, no plugins, one small dependency.</p>
+        <div class="actions">
+          <a class="btn primary" href="pages/demos.html">Try the live demo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn" href="pages/docs.html">Read the docs</a>
+        </div>
+        <div class="install"><span>npm install @meshesha/pptxjs</span><button class="copy" type="button" data-copy="npm install @meshesha/pptxjs">Copy</button></div>
+      </div>
+      <div>
+        <div class="hero-viewer" id="hero-viewer" aria-label="Live PPTXjs viewer showing a sample presentation"></div>
+        <p class="hero-caption">This is PPTXjs rendering <code>Sample_demo1.pptx</code> live, right now.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Everything a presentation needs</h2>
+        <p class="muted">PPTXjs reads the Office Open XML format directly: themes, layouts, masters, shapes, text, tables, charts and media.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>Viewer and slideshow</h3>
+          <p>Scrolling list or full slideshow with fit-to-screen scaling, keyboard control, fullscreen, autoplay and transitions.</p></article>
+        <article class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>Editor</h3>
+          <p>Move, resize and restyle shapes, edit text inline, add pictures and shapes, manage slides. Full undo/redo.</p></article>
+        <article class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>Export .pptx and .odp</h3>
+          <p>Lossless PowerPoint round trip: what you didn't change stays byte for byte. OpenDocument conversion included.</p></article>
+        <article class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></span>Charts without d3</h3>
+          <p>Bar, line, area, pie, doughnut and scatter charts drawn as crisp, dependency-free SVG with theme colours.</p></article>
+        <article class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h16M20 12l-3-3m3 3-3 3"/></svg></span>Right-to-left</h3>
+          <p>Hebrew, Arabic and Persian text with correct punctuation, RTL bullets and numbering, an RTL interface, and auto-detection.</p></article>
+        <article class="card"><h3><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></span>Safe by design</h3>
+          <p>Untrusted files can't inject script. Links are sanitised, zip bombs are rejected, and nothing global is touched.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Works with your stack</h2>
+        <p class="muted">A plain class for any page, with first-class bindings for popular frameworks. It also runs in Node.js and Web Workers.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Framework examples">
+        <button role="tab" id="t-js" aria-controls="p-js" aria-selected="true">JavaScript</button>
+        <button role="tab" id="t-react" aria-controls="p-react" aria-selected="false" tabindex="-1">React</button>
+        <button role="tab" id="t-vue" aria-controls="p-vue" aria-selected="false" tabindex="-1">Vue</button>
+        <button role="tab" id="t-ng" aria-controls="p-ng" aria-selected="false" tabindex="-1">Angular</button>
+        <button role="tab" id="t-jq" aria-controls="p-jq" aria-selected="false" tabindex="-1">jQuery</button>
+        <button role="tab" id="t-html" aria-controls="p-html" aria-selected="false" tabindex="-1">HTML</button>
+        <button role="tab" id="t-node" aria-controls="p-node" aria-selected="false" tabindex="-1">Node.js</button>
+      </div>
+      <div role="tabpanel" id="p-js" aria-labelledby="t-js"><pre><code>import { PptxViewer } from "@meshesha/pptxjs";
+
+const viewer = new PptxViewer("#slides", { mode: "slideshow" });
+await viewer.load("deck.pptx");   // URL, File, Blob or bytes</code></pre></div>
+      <div role="tabpanel" id="p-react" aria-labelledby="t-react" hidden><pre><code>import { PptxViewer } from "@meshesha/pptxjs/react";
+
+export function Deck() {
+  return &lt;PptxViewer src="/deck.pptx" options={{ mode: "slideshow" }} /&gt;;
+}</code></pre></div>
+      <div role="tabpanel" id="p-vue" aria-labelledby="t-vue" hidden><pre><code>&lt;script setup&gt;
+import { PptxViewer } from "@meshesha/pptxjs/vue";
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;PptxViewer src="/deck.pptx" :options="{ mode: 'slideshow' }" @load="onLoad" /&gt;
+&lt;/template&gt;</code></pre></div>
+      <div role="tabpanel" id="p-ng" aria-labelledby="t-ng" hidden><pre><code>// main.ts
+import { definePptxElements } from "@meshesha/pptxjs/angular";
+definePptxElements();
+
+// component template (schemas: [CUSTOM_ELEMENTS_SCHEMA])
+&lt;pptx-viewer [attr.src]="url" mode="slideshow" (pptx-load)="loaded($event)"&gt;&lt;/pptx-viewer&gt;</code></pre></div>
+      <div role="tabpanel" id="p-jq" aria-labelledby="t-jq" hidden><pre><code>// the v1 API keeps working
+$("#result").pptxToHtml({
+  pptxFileUrl: "deck.pptx",
+  slideMode: true
+});</code></pre></div>
+      <div role="tabpanel" id="p-html" aria-labelledby="t-html" hidden><pre><code>&lt;script src="https://unpkg.com/@meshesha/pptxjs/dist/pptxjs.umd.js"&gt;&lt;/script&gt;
+
+&lt;pptx-viewer src="deck.pptx" mode="slideshow" transition="slide"&gt;&lt;/pptx-viewer&gt;</code></pre></div>
+      <div role="tabpanel" id="p-node" aria-labelledby="t-node" hidden><pre><code>import { renderToHtml, PresentationDocument, exportOdpBytes } from "@meshesha/pptxjs";
+
+const { slides, css } = await renderToHtml(await readFile("deck.pptx"));
+const doc = await PresentationDocument.load(await readFile("deck.pptx"));
+await writeFile("deck.odp", exportOdpBytes(doc));</code></pre></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Upgrading from v1?</h2>
+        <p class="muted">Swap nine script tags for one. Existing <code>$(…).pptxToHtml()</code> calls keep working, and you get dozens of bug fixes, security hardening and a much faster renderer.</p>
+      </div>
+      <div class="stats">
+        <div><strong>1</strong>runtime dependency (was 6)</div>
+        <div><strong>up to 7×</strong>faster rendering</div>
+        <div><strong>180+</strong>shape types</div>
+        <div><strong>MIT</strong>open source</div>
+      </div>
+      <p style="margin-top:24px"><a class="btn" href="pages/docs.html#migration">Migration guide</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2017–<span data-year>2026</span> <a href="https://github.com/meshesha/">Tady Meshesha</a> · MIT License</p>
+    <nav aria-label="Footer">
+      <a href="pages/demos.html">Demos</a>
+      <a href="pages/docs.html">Docs</a>
+      <a href="https://github.com/meshesha/PPTXjs/issues">Issues</a>
+      <a href="https://github.com/meshesha/PPTXjs/blob/master/CHANGELOG.md">Changelog</a>
+      <a href="https://meshesha.github.io/presetShapeDefinitions">Preset shapes explorer</a>
+    </nav>
   </div>
-</div>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+</footer>
 
-  gtag('config', 'UA-109745538-1');
+<script src="lib/pptxjs.umd.js"></script>
+<script src="assets/site.js"></script>
+<script>
+  // live hero preview: the sample deck as a looping slideshow
+  (function () {
+    var host = document.getElementById("hero-viewer");
+    if (!window.PPTXjs || !host) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var viewer = new PPTXjs.PptxViewer(host, {
+      mode: "slideshow",
+      keyboard: true,
+      slideshow: { loop: true, transition: "fade", autoplay: reduce ? false : 4 }
+    });
+    viewer.load("pages/Sample_demo1.pptx").catch(function () { host.textContent = "The preview could not be loaded."; });
+  })();
 </script>
-
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
-<!-- JAVASCRIPTS -->
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>
